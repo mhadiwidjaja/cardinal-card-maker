@@ -61,7 +61,9 @@ async function buildProgram(v) {
     main: out('build', 'app.cjs'),
     output: exe,
     disableExperimentalSEAWarning: true,
-    useCodeCache: true,
+    // The code cache only speeds up startup a little, and on Intel Macs the program it makes
+    // crashes (SIGSEGV) before running any code, so it is left out there.
+    useCodeCache: !(OS === 'mac' && process.arch === 'x64'),
     assets: { ...pageAssets, 'launch.json': path.join(dir, 'launch.json') },
   };
   if (OS === 'windows') {
