@@ -6,7 +6,7 @@ release/
 .vite/
 coverage/
 # generated card output
-export/
+/export/
 *.bak
 backups/
 e2e/output/

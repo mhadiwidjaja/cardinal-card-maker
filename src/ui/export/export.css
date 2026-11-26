@@ -1,0 +1,30 @@
+.export-view { flex: 1; min-width: 0; overflow: auto; padding: 14px 16px 30px; }
+.export-kinds { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 12px; }
+.export-kind { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; text-align: left; padding: 10px 14px; width: 260px; border-radius: 8px; }
+.export-kind span { font-size: 12px; color: var(--muted); }
+.export-kind.active { border-color: var(--accent); background: var(--accent-soft); }
+.export-options { background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; max-width: 820px; display: flex; flex-direction: column; gap: 8px; }
+.export-row { display: grid; grid-template-columns: 140px 1fr; align-items: center; gap: 8px; font-size: 13px; }
+.export-row > label { color: var(--muted); }
+button.big { align-self: flex-start; padding: 7px 18px; margin-top: 6px; font-weight: 600; }
+.export-progress { display: flex; align-items: center; gap: 10px; margin: 14px 0; font-size: 13px; }
+.export-progress progress { width: 280px; }
+.export-result { margin-top: 14px; max-width: 820px; }
+.export-result p { margin: 0 0 6px; }
+.export-result .warnings { max-height: 300px; overflow: auto; }
+.print-check { background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; max-width: 820px; margin-top: 14px; display: flex; flex-direction: column; gap: 6px; }
+.print-check h3 { margin: 0; font-size: 14px; }
+.pc-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.pc-list > li { border-top: 1px solid var(--border); padding-top: 6px; }
+.pc-list ul { margin: 2px 0; padding-left: 18px; }
+.pc-list li.error { color: var(--error); }
+.pc-list li.warning { color: var(--warning); }
+.pc-gamut { width: 160px; height: auto; border-radius: 6px; margin-top: 4px; display: block; }
+.cost-planner { background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 10px 14px; max-width: 820px; margin-top: 14px; }
+.cost-planner summary { cursor: pointer; font-weight: 600; }
+.cost-prices { display: flex; flex-wrap: wrap; gap: 8px 14px; margin: 8px 0; }
+.cost-price { display: flex; flex-direction: column; gap: 2px; font-size: 12px; color: var(--muted); }
+.cost-price input { width: 120px; }
+.cost-table { width: auto; font-variant-numeric: tabular-nums; }
+.cost-table td, .cost-table th { padding: 3px 12px 3px 0; }
+.cost-table tr.best td { font-weight: 600; }
