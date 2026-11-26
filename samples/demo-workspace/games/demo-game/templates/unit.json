@@ -1,0 +1,15 @@
+{
+  "formatVersion": 1,
+  "id": "unit",
+  "name": "Unit",
+  "extends": "_base",
+  "faces": {
+    "front": {
+      "layers": [
+        { "id": "stats", "type": "shape", "shape": "roundrect", "rect": [585, 1000, 160, 70], "radius": 16, "fill": "#1b1b22" },
+        { "id": "statsText", "type": "text", "text": "{attack} / {health}", "rect": [585, 1000, 160, 70],
+          "font": { "family": "sans-serif", "size": 40, "weight": 700 }, "color": "#ffffff", "align": "center", "valign": "middle" }
+      ]
+    }
+  }
+}

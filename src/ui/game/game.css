@@ -1,0 +1,31 @@
+.game-view { flex: 1; min-width: 0; overflow: auto; padding: 14px 16px 40px; }
+.game-fields { border: none; padding: 0; margin: 0; min-width: 0; }
+.game-section { background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; margin-bottom: 12px; max-width: 980px; display: flex; flex-direction: column; gap: 8px; }
+.game-section h3 { margin: 0; font-size: 14px; }
+.game-section .hint { margin: 0; }
+.game-section input.wide { width: 100%; min-width: 260px; }
+.kv { border-collapse: collapse; font-size: 12px; }
+.kv th { text-align: left; color: var(--muted); font-weight: 500; padding: 2px 6px; }
+.kv td { padding: 2px 6px; vertical-align: middle; }
+.icon-thumb { width: 24px; height: 24px; object-fit: contain; display: inline-block; text-align: center; }
+.icon-thumb.missing { color: var(--error); }
+.fields-editor { display: flex; flex-direction: column; gap: 4px; }
+.field-row { border: 1px solid var(--border); border-radius: 6px; }
+.field-row.open { border-color: var(--accent); }
+.field-head { display: flex; align-items: center; gap: 6px; padding: 4px 6px; flex-wrap: wrap; }
+.field-head .fid { min-width: 90px; font-weight: 600; }
+.field-head input[type="text"] { width: 120px; }
+.field-head .grow { flex: 1; }
+.field-head button { padding: 1px 6px; font-size: 11px; }
+.field-details { padding: 6px 10px 10px; border-top: 1px solid var(--border); display: flex; flex-direction: column; gap: 6px; }
+.file-list { max-width: 520px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.banner.ok { background: var(--accent-soft); color: var(--text); }
+.pt-counters-edit { display: flex; flex-direction: column; gap: 6px; align-items: flex-start; }
+.pt-counters-edit input[type="text"] { width: 140px; }
+.game-nav { position: sticky; top: -14px; z-index: 5; display: flex; flex-wrap: wrap; gap: 4px; margin: -14px -16px 12px; padding: 8px 16px; background: var(--bg); border-bottom: 1px solid var(--border); }
+.game-nav a { color: var(--text); text-decoration: none; padding: 4px 10px; border-radius: 14px; border: 1px solid var(--border); background: var(--panel); font-size: 12px; }
+.game-nav a:hover { border-color: var(--accent); }
+.game-section { scroll-margin-top: 48px; }
+.colour-clashes { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 4px; }
+.colour-clashes .clash { display: inline-flex; align-items: center; gap: 3px; margin-left: 10px; font-size: 12px; }
+.swatch { display: inline-block; width: 14px; height: 14px; border-radius: 3px; border: 1px solid var(--border); }

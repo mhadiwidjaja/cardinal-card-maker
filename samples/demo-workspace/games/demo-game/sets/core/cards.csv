@@ -1,0 +1,18 @@
+id,name,template,cost,element,rarity,subtype,rules,flavor,attack,health,art,count
+c001,Ember Scout,unit,1,Fire,Common,Scout,Swift,"Always first to the fight, rarely first to leave.",2,1,ember-scout.svg,3
+c002,Cinder Hound,unit,2,Fire,Common,Beast,"When this unit attacks, deal 1 damage to each enemy unit with [shield].",,3,2,cinder-hound.svg,3
+c003,Flame Lance,spell,2,Fire,Uncommon,,"Deal 3 damage to a unit. If you control a [f] unit, deal 4 instead.",,,,flame-lance.svg,2
+c004,Pyre Titan,unit,6,Fire,Rare,Giant,"Shield 2
+When Pyre Titan enters, deal 2 damage to every other unit.",The forge-born do not kneel.,7,7,pyre-titan.svg,1
+c005,Tide Caller,unit,2,Water,Common,Mystic,[t]: Return a unit with cost 2 or less to its owner's hand.,,1,3,tide-caller.svg,3
+c006,Riptide,spell,1,Water,Common,,Draw a card. Swift units you control get *+1 attack* this turn.,,,,riptide.svg,3
+c007,Deepwater Warden,unit,4,Water,Uncommon,Guardian,"Shield 1
+Other [water] units you control have _Shield 1_.",,2,5,deepwater-warden.svg,2
+c008,Maelstrom,spell,5,Water,Rare,,Return all units to their owners' hands. Each player draws 2 cards.,The sea keeps no promises.,,,maelstrom.svg,1
+c009,Stoneback Tortoise,unit,3,Earth,Common,Beast,Shield 2,,1,6,stoneback-tortoise.svg,3
+c010,Root Snare,spell,1,Earth,Common,,[Exhaust] a unit. It doesn't recover during its owner's next turn.,,,,root-snare.svg,3
+c011,Grove Shaper,unit,3,Earth,Uncommon,Mystic,[e][e]: Give a unit +2 health until end of turn.,,2,3,grove-shaper.svg,2
+c012,Quake,spell,4,Earth,Uncommon,,Deal 2 damage to each unit without [shield].,,,,quake.svg,2
+c013,Steam Elemental,unit,4,"Fire, Water",Rare,Elemental,"Swift
+When Steam Elemental attacks, pay [f] or [w]: draw a card.",,4,3,steam-elemental.svg,1
+c014,Mudslinger,unit,2,"Water, Earth",Uncommon,Scout,Deal 1 damage to a unit. [[Not an icon] keeps its bracket; [firre] is a deliberate typo.,,2,2,,2

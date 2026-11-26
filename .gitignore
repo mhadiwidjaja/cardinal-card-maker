@@ -1,0 +1,12 @@
+node_modules/
+dist/
+build/
+release/
+*.local
+.vite/
+coverage/
+# generated card output
+export/
+*.bak
+backups/
+e2e/output/

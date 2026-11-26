@@ -1,0 +1,38 @@
+{
+  "formatVersion": 1,
+  "name": "Demo Game",
+  "card": { "widthMm": 63, "heightMm": 88, "bleedMm": 3, "safeMm": 3, "dpi": 300, "cornerRadiusMm": 3 },
+  "fields": [
+    { "id": "name", "type": "text", "identifying": true },
+    { "id": "template", "type": "choice", "source": "templates" },
+    { "id": "cost", "type": "number", "min": 0, "stats": { "bin": 1 } },
+    { "id": "element", "type": "multi", "choices": ["Fire", "Water", "Earth"],
+      "colors": { "Fire": "#d9442b", "Water": "#2b7bd9", "Earth": "#5f9b3a" } },
+    { "id": "rarity", "type": "choice", "choices": ["Common", "Uncommon", "Rare"] },
+    { "id": "subtype", "type": "text", "label": "Subtype" },
+    { "id": "rules", "type": "richtext" },
+    { "id": "flavor", "type": "text" },
+    { "id": "attack", "type": "number", "min": 0 },
+    { "id": "health", "type": "number", "min": 0 },
+    { "id": "art", "type": "image" },
+    { "id": "count", "type": "number", "default": 1, "role": "quantity", "stats": { "hidden": true } }
+  ],
+  "icons": {
+    "fire": { "file": "icons/fire.svg" },
+    "water": { "file": "icons/water.svg" },
+    "earth": { "file": "icons/earth.svg" },
+    "shield": { "file": "icons/shield.svg" },
+    "exhaust": { "file": "icons/exhaust.svg" },
+    "aliases": { "f": "fire", "w": "water", "e": "earth", "t": "exhaust" }
+  },
+  "keywords": [
+    { "name": "Shield", "match": "Shield {n:number}", "reminder": "(Prevent the next {n} damage this unit would take.)", "auto": "firstUse" },
+    { "name": "Swift", "match": "Swift", "reminder": "(This unit can attack the turn it is played.)", "auto": "firstUse" }
+  ],
+  "statistics": [
+    { "field": "cost", "numeric": true, "bin": 1 },
+    { "field": "element", "splitList": true, "order": ["Fire", "Water", "Earth"] },
+    { "field": "rarity", "order": ["Common", "Uncommon", "Rare"] },
+    { "field": "template" }
+  ]
+}

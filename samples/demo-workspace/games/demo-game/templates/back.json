@@ -1,0 +1,17 @@
+{
+  "formatVersion": 1,
+  "id": "back",
+  "name": "Card back",
+  "abstract": true,
+  "faces": {
+    "front": {
+      "layers": [
+        { "id": "bg", "type": "shape", "shape": "rect", "rect": [0, 0, 815, 1110], "fill": "#3b2a5c" },
+        { "id": "ring", "type": "shape", "shape": "ellipse", "rect": [207, 355, 400, 400], "fill": "none",
+          "stroke": { "color": "#e9c46a", "width": 14 } },
+        { "id": "title", "type": "text", "text": "DEMO", "rect": [0, 505, 815, 100],
+          "font": { "family": "serif", "size": 80, "weight": 700 }, "color": "#e9c46a", "align": "center", "valign": "middle" }
+      ]
+    }
+  }
+}

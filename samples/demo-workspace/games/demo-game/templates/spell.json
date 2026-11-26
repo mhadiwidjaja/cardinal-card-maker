@@ -1,0 +1,21 @@
+{
+  "formatVersion": 1,
+  "id": "spell",
+  "name": "Spell",
+  "extends": "_base",
+  "faces": {
+    "front": {
+      "layers": [
+        { "id": "frame", "fill": { "type": "linear", "angle": 90, "stops": [[0, "#e4edf2"], [1, "#c9d7e0"]] } },
+        { "id": "rulesShape", "type": "shape", "shape": "polygon", "after": "typeLine",
+          "points": [[70, 692], [745, 692], [745, 900], [407, 1060], [70, 900]],
+          "fill": "rgba(255,255,255,0.45)", "stroke": { "color": "rgba(27,27,34,0.25)", "width": 3 } },
+        { "id": "rules", "rect": null, "polygon": [[90, 702], [725, 702], [725, 892], [407, 1042], [90, 892]],
+          "text": "{rules}{if(flavor != '', '\\n_' + flavor + '_', '')}",
+          "align": "center", "valign": "middle" },
+        { "id": "flavor", "showIf": "false" },
+        { "id": "number", "rect": [70, 1030, 250, 32] }
+      ]
+    }
+  }
+}

@@ -1,0 +1,78 @@
+# Builds the downloads on each system and attaches the zips to a draft GitHub release,
+# with the version's section of CHANGELOG.md as its notes. Start it by pushing a version tag
+# that matches package.json:
+#   git tag v0.1.0 && git push origin v0.1.0
+# Then check the draft on the Releases page and publish it. A tag with a dash (v0.2.0-beta.1)
+# becomes a pre-release.
+name: Release
+
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 25
+          cache: npm
+      - name: Check the tag against package.json and CHANGELOG.md
+        if: startsWith(github.ref, 'refs/tags/v')
+        run: node scripts/release-notes.mjs "$GITHUB_REF_NAME"
+      - run: npm ci
+      - run: npm run lint
+      - run: npm test
+
+  package:
+    needs: test
+    strategy:
+      matrix:
+        # Node builds a single-file program only for the system it runs on, so each one builds its own.
+        os: [windows-latest, macos-latest, macos-15-intel, ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 25
+          cache: npm
+      - run: npm ci
+      - name: Get the Node.js licence (it goes into the zip, since the program contains Node.js)
+        shell: bash
+        run: curl -fsSL "https://raw.githubusercontent.com/nodejs/node/$(node -p process.version)/LICENSE" -o "$RUNNER_TEMP/node-LICENSE"
+      - run: npm run package
+        env:
+          NODE_LICENSE_FILE: ${{ runner.temp }}/node-LICENSE
+      - name: Check that the program starts and serves the app
+        shell: bash
+        run: node scripts/smoke.mjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: app-${{ matrix.os }}
+          path: release/*.zip
+          if-no-files-found: error
+
+  publish:
+    needs: package
+    if: startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/download-artifact@v4
+        with:
+          path: zips
+          merge-multiple: true
+      - name: Draft release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          node scripts/release-notes.mjs "$GITHUB_REF_NAME" > notes.md
+          pre=""
+          case "$GITHUB_REF_NAME" in *-*) pre="--prerelease" ;; esac
+          gh release create "$GITHUB_REF_NAME" zips/*.zip --repo "$GITHUB_REPOSITORY" --draft $pre --title "Cardinal ${GITHUB_REF_NAME#v}" --notes-file notes.md

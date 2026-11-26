@@ -1,0 +1,68 @@
+:root {
+  --series-1: #2a78d6; --series-2: #eb6834; --series-3: #1baf7a; --series-4: #eda100;
+  --series-5: #e87ba4; --series-6: #008300; --series-7: #6250d6; --series-8: #e34948;
+  --chart-grid: #e4e3df; --chart-axis: #b9b8b2;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --series-1: #3987e5; --series-2: #d95926; --series-3: #199e70; --series-4: #c98500;
+    --series-5: #d55181; --series-6: #008300; --series-7: #9085e9; --series-8: #e66767;
+    --chart-grid: #33332f; --chart-axis: #5a5a55;
+  }
+}
+
+.stats-view { flex: 1; min-width: 0; overflow: auto; padding: 14px 16px 30px; }
+.stats-filters { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 14px; }
+.stats-filters label { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--muted); }
+.stats-filters .filter { width: 280px; }
+.tiles { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 14px; }
+.tile { background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 10px 14px; min-width: 130px; }
+.tile-label { font-size: 12px; color: var(--muted); }
+.tile-value { font-size: 26px; font-weight: 650; font-variant-numeric: tabular-nums; line-height: 1.2; }
+.tile-sub { font-size: 11px; color: var(--muted); }
+.chart-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(420px, 1fr)); gap: 12px; }
+.chart-card { background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; min-width: 0; }
+.chart-card header { display: flex; align-items: center; gap: 6px; margin-bottom: 8px; }
+.chart-card h3 { margin: 0; font-size: 13px; }
+.chart-card header select, .chart-card header button { font-size: 11px; padding: 2px 6px; }
+.chart-note { font-size: 11px; color: var(--muted); margin: 6px 0 0; }
+.chart-box { position: relative; }
+.chart-svg { width: 100%; height: auto; display: block; }
+.chart-svg .gridline { stroke: var(--chart-grid); stroke-width: 1; }
+.chart-svg .axis { stroke: var(--chart-axis); stroke-width: 1; }
+.chart-svg .tick { fill: var(--muted); font-size: 11px; font-variant-numeric: tabular-nums; }
+.chart-tip {
+  position: absolute; pointer-events: none; z-index: 5; white-space: nowrap;
+  background: var(--panel); color: var(--text); border: 1px solid var(--border); border-radius: 6px;
+  padding: 6px 8px; font-size: 12px; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+}
+.tip-row { display: flex; align-items: center; gap: 5px; color: var(--muted); }
+.legend { display: flex; flex-wrap: wrap; gap: 10px; font-size: 12px; color: var(--muted); margin-bottom: 4px; }
+.legend-item { display: inline-flex; align-items: center; gap: 5px; }
+.swatch { display: inline-block; width: 10px; height: 10px; border-radius: 2px; }
+.barlist { display: flex; flex-direction: column; gap: 4px; }
+.barlist-row { display: grid; grid-template-columns: minmax(70px, 30%) 1fr 36px; gap: 8px; align-items: center; font-size: 12px; padding: 2px 0; }
+.barlist-row:hover { background: var(--accent-soft); border-radius: 4px; }
+.barlist-label { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.barlist-track { height: 14px; display: flex; }
+.barlist-bar { height: 100%; border-radius: 0 4px 4px 0; min-width: 2px; }
+.barlist-value { text-align: right; font-variant-numeric: tabular-nums; color: var(--text); }
+.chart-table table { font-size: 12px; }
+.chart-table td, .chart-table th { padding: 3px 8px; font-variant-numeric: tabular-nums; }
+.balance { margin-top: 16px; background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; }
+.balance h3 { margin: 0 0 4px; font-size: 14px; }
+.balance h4 { margin: 12px 0 4px; font-size: 13px; }
+.balance-mode { flex-wrap: wrap; gap: 6px 14px; margin: 6px 0; }
+.balance-formula { min-width: 260px; font-family: ui-monospace, Consolas, monospace; }
+.balance-body { display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start; }
+.balance-scatter { width: 300px; max-width: 100%; height: auto; flex-shrink: 0; }
+.balance-scatter text { font-size: 10px; fill: var(--muted); }
+.balance-scatter .diag { stroke: var(--border); stroke-width: 1.5; stroke-dasharray: 4 3; }
+.balance-scatter circle { fill: var(--muted); opacity: 0.8; }
+.balance-scatter circle.cheap { fill: #c0392b; }
+.balance-scatter circle.dear { fill: #2b7bd9; }
+.balance-worth { width: auto; margin: 6px 0; }
+.balance-worth td, .balance-worth th { padding: 2px 12px 2px 0; font-variant-numeric: tabular-nums; }
+.balance-off { margin: 0; padding-left: 18px; }
+.balance-off li.cheap strong { color: #c0392b; }
+.balance-off li.dear strong { color: #2b7bd9; }

@@ -1,0 +1,12 @@
+# Text files are stored with LF line endings; Windows batch files keep CRLF, which cmd.exe needs.
+* text=auto
+*.bat text eol=crlf
+*.png binary
+*.ico binary
+*.icns binary
+*.pdf binary
+*.ttf binary
+*.otf binary
+*.woff binary
+*.woff2 binary
+*.xlsx binary
