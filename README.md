@@ -30,7 +30,6 @@ Download the zip for your computer from the [latest release](../../releases/late
 | --- | --- | --- |
 | Windows (64-bit) | `cardinal-windows-x64.zip` | `cardinal-browser-windows-x64.zip` |
 | Mac with Apple silicon (M1 and later) | `cardinal-mac-apple-silicon.zip` | `cardinal-browser-mac-apple-silicon.zip` |
-| Mac with an Intel processor | `cardinal-mac-intel.zip` | `cardinal-browser-mac-intel.zip` |
 | Linux (64-bit) | `cardinal-linux-x64.zip` | `cardinal-browser-linux-x64.zip` |
 
 - **Cardinal** opens in its own window, like any other app, and quits when you close the window. The window is drawn by Microsoft Edge, which is part of Windows, or by Chrome or Edge on a Mac or Linux if one is installed (otherwise Cardinal opens in your default browser). It uses its own profile, separate from your own browsing. On a Mac it is `Cardinal.app`.
@@ -75,7 +74,7 @@ Versions follow [semantic versioning](https://semver.org) and are listed in [CHA
    git push origin main v0.2.0
    ```
 
-3. The release workflow checks that the tag matches `package.json` and the changelog, builds both downloads on Windows, Mac (Apple silicon and Intel) and Linux, checks that each starts, and makes a **draft** release with the zips and the changelog section as notes. Check it on the Releases page and publish it. A tag with a dash, such as `v0.2.0-beta.1`, becomes a pre-release.
+3. The release workflow checks that the tag matches `package.json` and the changelog, builds both downloads on Windows, Mac (Apple silicon) and Linux, checks that each starts, and makes a **draft** release with the zips and the changelog section as notes. Check it on the Releases page and publish it. A tag with a dash, such as `v0.2.0-beta.1`, becomes a pre-release.
 
 ## Licence
 

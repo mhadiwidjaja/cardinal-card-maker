@@ -1,7 +1,7 @@
 // Starts each program that `npm run package` built (listed in build/programs.json) and checks
 // that it serves the app with a bridge token, then stops it. Used by the release workflow on each system.
 // The first start of a freshly built program can be slow (macOS scans new programs before they run,
-// and the Intel Mac runners are slow), so it waits up to a minute and shows the program's output on failure.
+// and slow CI machines take longer), so it waits up to a minute and shows the program's output on failure.
 
 import { spawn } from 'node:child_process';
 import fs from 'node:fs';

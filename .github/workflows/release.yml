@@ -32,7 +32,7 @@ jobs:
     strategy:
       matrix:
         # Node builds a single-file program only for the system it runs on, so each one builds its own.
-        os: [windows-latest, macos-latest, macos-15-intel, ubuntu-latest]
+        os: [windows-latest, macos-latest, ubuntu-latest]
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v5
